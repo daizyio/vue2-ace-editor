@@ -1,5 +1,8 @@
 var ace = require('brace');
 
+// Enforce strict CSP
+ace.config.set('useStrictCSP', true);
+
 module.exports = {
     render: function (h) {
         var height = this.height ? this.px(this.height) : '100%'

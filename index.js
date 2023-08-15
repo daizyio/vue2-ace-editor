@@ -1,8 +1,5 @@
 var ace = require('brace');
 
-// Enforce strict CSP
-ace.config.set('useStrictCSP', true);
-
 module.exports = {
     render: function (h) {
         var height = this.height ? this.px(this.height) : '100%'
@@ -75,6 +72,9 @@ module.exports = {
 
         var editor = vm.editor = ace.edit(this.$el);
         editor.$blockScrolling = Infinity;
+
+        // Enforce strict CSP
+        ace.config.set('useStrictCSP', true);
 
         this.$emit('init',editor);
         
